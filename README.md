@@ -1,4 +1,4 @@
-# LinuxDel 
+# ChameleonFileOps 
 
 # 在Windows上实现Linux文件删除逻辑
 
@@ -17,7 +17,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/jimmy32767255/LinuxDel.git
+git clone https://github.com/jimmy32767255/ChameleonFileOps.git
 
 # 安装依赖
 pip install -r requirements.txt

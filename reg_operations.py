@@ -26,7 +26,7 @@ def run_as_admin():
 
 def add_to_context_menu():
     """
-    将'使用LinuxDel删除(E)'选项添加到系统右键菜单
+    将'使用ChameleonFileOps删除(E)'选项添加到系统右键菜单
     """
     if not run_as_admin():
         return False
@@ -43,8 +43,8 @@ def add_to_context_menu():
         
         # 创建注册表项
         logger.info('开始创建注册表项')
-        key = winreg.CreateKey(winreg.HKEY_CLASSES_ROOT, r'*\shell\LinuxDel')
-        winreg.SetValue(key, '', winreg.REG_SZ, '使用LinuxDel删除(&E)')
+        key = winreg.CreateKey(winreg.HKEY_CLASSES_ROOT, r'*\shell\ChameleonFileOps')
+        winreg.SetValue(key, '', winreg.REG_SZ, '使用ChameleonFileOps删除(&E)')
         
         # 创建command子项
         command_key = winreg.CreateKey(key, 'command')
@@ -60,15 +60,15 @@ def add_to_context_menu():
 
 def remove_from_context_menu():
     """
-    从系统右键菜单中移除'使用LinuxDel删除(E)'选项
+    从系统右键菜单中移除'使用ChameleonFileOps删除(E)'选项
     """
     if not run_as_admin():
         return False
     
     try:
         logger.info('开始移除注册表项')
-        winreg.DeleteKey(winreg.HKEY_CLASSES_ROOT, r'*\shell\LinuxDel\command')
-        winreg.DeleteKey(winreg.HKEY_CLASSES_ROOT, r'*\shell\LinuxDel')
+        winreg.DeleteKey(winreg.HKEY_CLASSES_ROOT, r'*\shell\ChameleonFileOps\command')
+        winreg.DeleteKey(winreg.HKEY_CLASSES_ROOT, r'*\shell\ChameleonFileOps')
         logger.success('右键菜单移除成功')
         return True
     except Exception as e:

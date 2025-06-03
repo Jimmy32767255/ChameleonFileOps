@@ -52,7 +52,7 @@ class FileDeleterApp:
         os.makedirs('logs', exist_ok=True)
         logger.add('logs/file_deleter.log', rotation='10 MB', encoding='utf-8')
         self.root = root
-        root.title("LinuxDel")
+        root.title("ChameleonFileOps")
         self.shutdown_flag = False
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
         
